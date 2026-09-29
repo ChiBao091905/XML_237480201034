@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="Văn học"></p>
+
+<script>
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myFunction(this);
+        }
+    };
+    xhttp.open("GET", "bai6-buoi1.xml", true);
+    xhttp.send();
+
+    function myFunction(xml) {
+        var xmlDoc = xml.responseXML;
+        document.getElementById("Văn học").innerHTML = xmlDoc.getElementsByTagName("title")[2].childNodes[0].nodeValue;
+    }
+
+</script>
+
+</body>
+</html>

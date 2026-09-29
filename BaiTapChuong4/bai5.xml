@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<menu>
+    <dish id="M001">
+        <name>Gỏi cuốn tôm thịt</name>
+        <category>Khai vị</category>
+        <price currency="VND">45000</price>
+        <description>Gỏi cuốn gồm tôm, thịt heo, bún và rau sống, dùng kèm nước chấm.</description>
+        <status>Còn hàng</status>
+    </dish>
+
+    <dish id="M002">
+        <name>Súp hải sản</name>
+        <category>Khai vị</category>
+        <price currency="VND">55000</price>
+        <description>Súp nóng với tôm, mực, nấm và rau củ.</description>
+        <status>Còn hàng</status>
+    </dish>
+
+    <dish id="M003">
+        <name>Cơm chiên Dương Châu</name>
+        <category>Món chính</category>
+        <price currency="VND">75000</price>
+        <description>Cơm chiên với trứng, xúc xích, tôm, đậu Hà Lan và cà rốt.</description>
+        <status>Còn hàng</status>
+    </dish>
+
+    <dish id="M004">
+        <name>Bò lúc lắc</name>
+        <category>Món chính</category>
+        <price currency="VND">120000</price>
+        <description>Thịt bò mềm xào cùng hành tây, ớt chuông và rau củ.</description>
+        <status>Hết hàng</status>
+    </dish>
+
+    <dish id="M005">
+        <name>Cá hồi áp chảo</name>
+        <category>Món chính</category>
+        <price currency="VND">180000</price>
+        <description>Cá hồi áp chảo dùng kèm rau củ và nước sốt đặc biệt.</description>
+        <status>Còn hàng</status>
+    </dish>
+
+    <dish id="M006">
+        <name>Chè khúc bạch</name>
+        <category>Tráng miệng</category>
+        <price currency="VND">40000</price>
+        <description>Món tráng miệng thanh mát gồm khúc bạch, vải và hạnh nhân.</description>
+        <status>Còn hàng</status>
+    </dish>
+</menu>
