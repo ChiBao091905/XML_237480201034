@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1.2: Viết chương trình để đọc và in nội dung trong tập tin dsmonhoc.xml ra màn hình.</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>DANH SÁCH MÔN HỌC (NHÀ XUẤT BẢN MINH KHAI)</h2>
+    <div id="ketqua">Đang tải dữ liệu...</div>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === 4 && xhr.status === 200) {
+                var xmlDoc = xhr.responseXML;
+                var subjects = xmlDoc.getElementsByTagName("subject");
+                var table = "<table>";
+                table += "<tr><th>STT</th><th>Tên môn học</th><th>Nhà xuất bản</th><th>Tác giả</th></tr>";
+                var stt = 1;
+                for (var i = 0; i < subjects.length; i++) {
+                    var title = subjects[i].getElementsByTagName("title")[0].textContent.trim();
+                    var publisher = subjects[i].getElementsByTagName("publisher")[0].textContent.trim();
+                    var author = subjects[i].getElementsByTagName("author")[0].textContent.trim();
+
+                    if(publisher.toLowerCase() === "minh khai") {
+                        table += "<tr>";
+                        table += "<td>" + stt++ + "</td>";
+                        table += "<td>" + title + "</td>";
+                        table += "<td>" + publisher + "</td>";
+                        table += "<td>" + author + "</td>";
+                        table += "</tr>";
+                    }
+                }
+                table += "</table>";
+                document.getElementById("ketqua").innerHTML = table;
+            }
+        };
+        xhr.open("GET", "dsmonhoc.xml", true);
+        xhr.send();
+    </script>
+</body>
+</html>

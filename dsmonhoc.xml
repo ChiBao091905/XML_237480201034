@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subjects>
+    <subject>
+        <title>Lập Trình Web</title>
+        <publisher>Minh Khai</publisher>
+        <author>Hoàng Hôn</author>
+    </subject>
+    <subject>
+        <title>Phân Tích TK Hệ Thống</title>
+        <publisher>Giáo Dục</publisher>
+        <author>Phương Anh</author>
+    </subject>
+    <subject>
+        <title>Ngôn Ngữ Lập Trình</title>
+        <publisher>Minh Khai</publisher>
+        <author>Phước Nghĩa</author>
+    </subject>
+    <subject>
+        <title>Mạng Máy Tính</title>
+        <publisher>ĐH Cần Thơ</publisher>
+        <author>Ngọc Lợi</author>
+    </subject>
+    <subject>
+        <title>Lập Trình Python</title>
+        <publisher>Giáo Dục</publisher>
+        <author>Khánh Luân</author>
+    </subject>
+</subjects>
