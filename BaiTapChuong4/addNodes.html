@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+    }
+};
+xhttp.open("GET", "bai5-buoi1.xml", true);
+xhttp.send();
+
+function myFunction(xml) {
+    var x, txt, xmlDoc;
+    xmlDoc = xml.responseXML;
+    x = xmlDoc.getElementsByTagName("name")[0].childNodes[0];
+    txt = x.nodeValue + "<br>";
+    x.insertData(0, "Món ");
+    txt += x.nodeValue;
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+</body>
+</html>
