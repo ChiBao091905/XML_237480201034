@@ -19,6 +19,8 @@ ram2 = ET.SubElement(computer2, "ram")
 ram2.text = "16GB"
 # Tao cay XML
 tree = ET.ElementTree(root)
+ET.indent(tree, space="   ")
 # Ghi ra file Computer.xml
 tree.write("Computer.xml", encoding="utf-8", xml_declaration=True)
+
 print("Da tao file Computer.xml thanh cong!")
