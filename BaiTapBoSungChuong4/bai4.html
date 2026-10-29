@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4: Sách có giá lớn hơn 30.00</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 500px; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+        th { background: #007bff; color: white; }
+    </style>
+</head>
+<body>
+    <h2>Bài 4: Sách có giá > 30.00</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tiêu đề sách</th>
+                <th>Giá ($)</th>
+            </tr>
+        </thead>
+        <tbody id="output"></tbody>
+    </table>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "books.xml", true);
+        xhttp.send();
+
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            var books = xmlDoc.getElementsByTagName("book");
+            var rows = "";
+            for (var i = 0; i < books.length; i++) {
+                var priceNode = books[i].getElementsByTagName("price")[0];
+                var price = parseFloat(priceNode.textContent.trim());
+
+                if (price > 30.00) {
+                    var title = books[i].getElementsByTagName("title")[0].textContent;
+                    rows += "<tr><td>" + title + "</td><td><b>" + price.toFixed(2) + "</b></td></tr>";
+                }
+            }
+            document.getElementById("output").innerHTML = rows || "<tr><td colspan='2'>Không có sách nào > 30.00</td></tr>";
+        }
+    </script>
+</body>
+</html>

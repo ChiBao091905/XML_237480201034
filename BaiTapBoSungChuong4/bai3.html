@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3: Truy xuất nút con đầu tiên và cuối cùng</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .box { background: #eef2f7; padding: 15px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <h2>Bài 3: Truy xuất firstElementChild và lastElementChild</h2>
+    <div id="output" class="box"></div>
+
+    <script>
+        var xmlText = "<book><title>Học XML Cơ Bản</title><author>Nguyễn Văn A</author><year>2024</year><price>35.00</price></book>";
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+        var bookNode = xmlDoc.getElementsByTagName("book")[0];
+        
+        var firstElem = bookNode.firstElementChild;
+        var lastElem = bookNode.lastElementChild;  
+
+        var txt = "<b>Thẻ &lt;book&gt; chứa:</b> &lt;title&gt;, &lt;author&gt;, &lt;year&gt;, &lt;price&gt;<br><br>" +
+                  "&bull; <b>Nút con đầu tiên (" + firstElem.tagName + "):</b> " + firstElem.textContent + "<br>" +
+                  "&bull; <b>Nút con cuối cùng (" + lastElem.tagName + "):</b> " + lastElem.textContent;
+
+        document.getElementById("output").innerHTML = txt;
+    </script>
+</body>
+</html>

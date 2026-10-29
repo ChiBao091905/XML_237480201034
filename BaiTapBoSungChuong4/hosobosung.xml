@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+  <contact id="1">
+    <name>Trần Văn A</name>
+    <phone>0123456789</phone>
+    <email>tranvana@gmail.com</email>
+    <group>Công Việc</group>
+  </contact>
+  <contact id="2">
+    <name>Nguyễn Văn B</name>
+    <phone>0987654321</phone>
+    <email>nguyenvanb@gmail.com</email>
+    <group>Gia Đình</group>
+  </contact>
+  <contact id="3">
+    <name>Quốc Khánh</name>
+    <phone>0125326678</phone>
+    <email>khanh@gmail.com</email>
+    <group>Công Ty</group>
+  </contact>
+</contacts>

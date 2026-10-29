@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: Viết chương trình hiển thị tổng lương của tất cả nhân viên trong tài liệu xml danhsachnhanvien.xml</title>
+</head>
+<body>
+    <h2>Kết quả nhận được từ file XML</h2>
+    <div id="output"></div>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "danhsachnhanvien.xml", true);
+        xhttp.send();
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            var dsLuong = xmlDoc.getElementsByTagName("luong");
+            var tongLuong = 0;
+            for (var i = 0; i < dsLuong.length; i++) {
+                var luongStr = dsLuong[i].childNodes[0].nodeValue.trim();
+                var luongSo = parseInt(luongStr.replace(/\./g, ""), 10);
+                tongLuong += luongSo;
+            }
+            document.getElementById("output").innerHTML = "Tổng lương của tất cả nhân viên: " + tongLuong.toLocaleString('vi-VN') + " VND";
+        }
+    </script>
+</body>
+</html>

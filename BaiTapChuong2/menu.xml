@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+    <dish id="M01" status="Còn hàng">
+        <name>Chả giò hải sản</name>
+        <category>Khai vị</category>
+        <price unit="VND">85000</price>
+        <description>Nhân tôm, mực, sốt mayonnaise chiên xù.</description>
+    </dish>
+    
+    <dish id="M02" status="Còn hàng">
+        <name>Gỏi ngó sen tôm thịt</name>
+        <category>Khai vị</category>
+        <price unit="VND">65000</price>
+        <description>Ngó sen giòn ngọt trộn cùng tôm, thịt tươi và nước mắm chua ngọt.</description>
+    </dish>
+
+    <dish id="M03" status="Còn hàng">
+        <name>Tôm sú sốt hoàng kim</name>
+        <category>Món chính</category>
+        <price unit="VND">195000</price>
+        <description>Tôm sú chiên giòn quyện sốt trứng muối.</description>
+    </dish>
+
+    <dish id="M04" status="Hết hàng">
+        <name>Gà ta hấp lá chanh</name>
+        <category>Món chính</category>
+        <price unit="VND">160000</price>
+        <description>Nửa con gà ta thả vướn thịt chắc, chấm muối tiêu chanh.</description>
+    </dish>
+
+    <dish id="M05" status="Còn hàng">
+        <name>Chè khúc bạch</name>
+        <category>Tráng miệng</category>
+        <price unit="VND">30000</price>
+        <description>Khúc bạch thanh mát, béo ngậy ăn cùng hạnh nhân lát và nước đường phèn.</description>
+    </dish>
+</menu>

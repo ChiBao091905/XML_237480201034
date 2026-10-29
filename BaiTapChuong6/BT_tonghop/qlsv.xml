@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+  <student>
+    <id>001</id>
+    <name>lê gia lể</name>
+    <date>12-05-2000</date>
+    <city>Ca Mau</city>
+    <dob>10/3/2005</dob>
+  </student>
+  <student>
+    <id>003</id>
+    <name>Hoang Nam</name>
+    <date>20-09-2005</date>
+    <city>Ca Mau</city>
+  </student>
+  <student>
+    <id>002</id>
+    <name>Ngô Quốc Huy</name>
+    <date>10-10-2005</date>
+    <city>cà mau</city>
+    <dob>10/3/2005</dob>
+  </student>
+  <student>
+    <id>004</id>
+    <name>Ngô Tuấn Anh</name>
+    <date>09-12-2005</date>
+    <city>cà mau</city>
+  </student>
+</students>

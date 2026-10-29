@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<library>
+    <category name="Văn học">
+        <book>
+            <isbn>9786041234567</isbn>
+            <title>Tuổi thơ dữ dội</title>
+
+            <authors>
+                <author>Phùng Quán</author>
+            </authors>
+
+            <publicationYear>1988</publicationYear>
+            <publisher>Nhà xuất bản Kim Đồng</publisher>
+            <language>Tiếng Việt</language>
+
+            <shelfLocation>
+                <area>A</area>
+                <shelf>01</shelf>
+                <floor>2</floor>
+            </shelfLocation>
+        </book>
+
+        <book>
+            <isbn>9786049876543</isbn>
+            <title>Dế Mèn phiêu lưu ký</title>
+
+            <authors>
+                <author>Tô Hoài</author>
+            </authors>
+
+            <publicationYear>1941</publicationYear>
+            <publisher>Nhà xuất bản Kim Đồng</publisher>
+            <language>Tiếng Việt</language>
+
+            <shelfLocation>
+                <area>A</area>
+                <shelf>02</shelf>
+                <floor>2</floor>
+            </shelfLocation>
+        </book>
+    </category>
+
+    <category name="Khoa học">
+        <book>
+            <isbn>9780134685991</isbn>
+            <title>The Science of Everyday Things</title>
+
+            <authors>
+                <author>Robert L. Wolke</author>
+                <author>John Doe</author>
+            </authors>
+
+            <publicationYear>2020</publicationYear>
+            <publisher>Academic Press</publisher>
+            <language>English</language>
+
+            <shelfLocation>
+                <area>B</area>
+                <shelf>03</shelf>
+                <floor>1</floor>
+            </shelfLocation>
+        </book>
+
+        <book>
+            <isbn>9780198788607</isbn>
+            <title>A Brief History of Time</title>
+
+            <authors>
+                <author>Stephen Hawking</author>
+            </authors>
+
+            <publicationYear>1988</publicationYear>
+            <publisher>Bantam Books</publisher>
+            <language>English</language>
+
+            <shelfLocation>
+                <area>B</area>
+                <shelf>04</shelf>
+                <floor>1</floor>
+            </shelfLocation>
+        </book>
+    </category>
+
+    <category name="Công nghệ">
+        <book>
+            <isbn>9780132350884</isbn>
+            <title>Clean Code</title>
+
+            <authors>
+                <author>Robert C. Martin</author>
+            </authors>
+
+            <publicationYear>2008</publicationYear>
+            <publisher>Prentice Hall</publisher>
+            <language>English</language>
+
+            <shelfLocation>
+                <area>C</area>
+                <shelf>05</shelf>
+                <floor>3</floor>
+            </shelfLocation>
+        </book>
+
+        <book>
+            <isbn>9780135957059</isbn>
+            <title>The Pragmatic Programmer</title>
+
+            <authors>
+                <author>David Thomas</author>
+                <author>Andrew Hunt</author>
+            </authors>
+
+            <publicationYear>2019</publicationYear>
+            <publisher>Addison-Wesley</publisher>
+            <language>English</language>
+
+            <shelfLocation>
+                <area>C</area>
+                <shelf>06</shelf>
+                <floor>3</floor>
+            </shelfLocation>
+        </book>
+    </category>
+</library>

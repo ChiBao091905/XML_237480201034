@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2: Đọc danh sách tiêu đề sách</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        ol { line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <h2>Bài 2: Danh sách tiêu đề sách từ books.xml</h2>
+    <ol id="output"></ol>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "books.xml", true);
+        xhttp.send();
+
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            var titles = xmlDoc.getElementsByTagName("title");
+            var html = "";
+            for (var i = 0; i < titles.length; i++) {
+                // Dùng .textContent hoặc firstChild an toàn
+                var val = titles[i].textContent || titles[i].childNodes[0].nodeValue;
+                html += "<li>" + val + "</li>";
+            }
+            document.getElementById("output").innerHTML = html;
+        }
+    </script>
+</body>
+</html>

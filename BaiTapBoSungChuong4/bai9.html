@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9: Cập nhật lương nhân viên Kỹ thuật</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 600px; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px 12px; }
+        th { background: #28a745; color: white; }
+        .highlight { background-color: #d4edda; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Bài 9: Danh sách lương sau khi cập nhật (+10% phòng Kỹ Thuật)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Mã NV</th>
+                <th>Họ tên</th>
+                <th>Đơn vị</th>
+                <th>Lương sau cập nhật</th>
+            </tr>
+        </thead>
+        <tbody id="output"></tbody>
+    </table>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "danhsachnhanvien.xml", true);
+        xhttp.send();
+
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            var nhanviens = xmlDoc.getElementsByTagName("nhanvien");
+            var rows = "";
+
+            for (var i = 0; i < nhanviens.length; i++) {
+                var donviNode = nhanviens[i].getElementsByTagName("donvi")[0];
+                var luongNode = nhanviens[i].getElementsByTagName("luong")[0];
+
+                if (donviNode && luongNode) {
+                    var donvi = donviNode.textContent.trim();
+                    var textNode = luongNode.childNodes[0];
+                    var isKyThuat = donvi.toLowerCase() === "kỹ thuật";
+
+                    if (isKyThuat && textNode) {
+                        // Xóa dấu chấm định dạng 7.000.000 thành 7000000 để tính
+                        var rawLuong = textNode.nodeValue.replace(/\./g, "").trim();
+                        var luongSo = parseFloat(rawLuong);
+                        if (!isNaN(luongSo)) {
+                            var luongMoi = Math.round(luongSo * 1.1);
+                            // Gán lại cho nodeValue theo yêu cầu đề bài
+                            textNode.nodeValue = luongMoi.toLocaleString("vi-VN") + " VNĐ";
+                        }
+                    }
+
+                    var manv = nhanviens[i].getElementsByTagName("manv")[0].textContent.trim();
+                    var tenNode = nhanviens[i].getElementsByTagName("tennv")[0] || nhanviens[i].getElementsByTagName("hoten")[0];
+                    var ten = tenNode ? tenNode.textContent.trim() : "";
+
+                    rows += "<tr class='" + (isKyThuat ? "highlight" : "") + "'>" +
+                                "<td>" + manv + "</td>" +
+                                "<td>" + ten + "</td>" +
+                                "<td>" + donvi + "</td>" +
+                                "<td>" + textNode.nodeValue + (isKyThuat ? " (+10%)" : "") + "</td>" +
+                            "</tr>";
+                }
+            }
+            document.getElementById("output").innerHTML = rows;
+        }
+    </script>
+</body>
+</html>

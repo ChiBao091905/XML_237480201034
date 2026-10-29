@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <categories>
+        <category name="Công nghệ thông tin">
+            <books>
+                <book isbn="978-604-1-12345-1">
+                    <title>Lập trình Python cơ bản đến nâng cao</title>
+                    <authors>
+                        <author>Nguyễn Văn A</author>
+                        <author>Trần Thị B</author>
+                    </authors>
+                    <publishYear>2023</publishYear>
+                    <publisher>Nhà xuất bản Khoa học Kỹ thuật</publisher>
+                    <language>Tiếng Việt</language>
+                    <shelfLocation>
+                        <zone>Khu A</zone>
+                        <shelf>Kệ 03</shelf>
+                        <floor>Tầng 2</floor>
+                    </shelfLocation>
+                </book>
+                
+                <book isbn="978-604-2-54321-9">
+                    <title>Cấu trúc dữ liệu và giải thuật</title>
+                    <authors>
+                        <author>Lê Văn C</author>
+                    </authors>
+                    <publishYear>2022</publishYear>
+                    <publisher>Nhà xuất bản Đại học Quốc gia</publisher>
+                    <language>Tiếng Việt</language>
+                    <shelfLocation>
+                        <zone>Khu A</zone>
+                        <shelf>Kệ 04</shelf>
+                        <floor>Tầng 2</floor>
+                    </shelfLocation>
+                </book>
+            </books>
+        </category>
+
+        <category name="Kinh tế - Khởi nghiệp">
+            <books>
+                <book isbn="978-604-3-98765-4">
+                    <title>Khởi nghiệp tinh gọn</title>
+                    <authors>
+                        <author>Eric Ries</author>
+                    </authors>
+                    <publishYear>2021</publishYear>
+                    <publisher>Nhà xuất bản Trẻ</publisher>
+                    <language>Tiếng Việt</language>
+                    <shelfLocation>
+                        <zone>Khu B</zone>
+                        <shelf>Kệ 01</shelf>
+                        <floor>Tầng 1</floor>
+                    </shelfLocation>
+                </book>
+            </books>
+        </category>
+    </categories>
+</library>

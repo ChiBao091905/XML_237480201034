@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: Viết chương trình hiển thị họ tên của nhân viên có manv = "002" trong tài liệu xml danhsachnhanvien.xml</title>
+</head>
+<body>
+    <h2>Kết quả nhận được từ file XML</h2>
+    <div id="output"></div>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "danhsachnhanvien.xml", true);
+        xhttp.send();
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            var dsNV = xmlDoc.getElementsByTagName("nhanvien");
+            var txt = "";
+            for (var i = 0; i < dsNV.length; i++) {
+                var manv = dsNV[i].getElementsByTagName("manv")[0].childNodes[0].nodeValue.trim();
+                if (manv == "002") {
+                    var tennv = dsNV[i].getElementsByTagName("tennv")[0].childNodes[0].nodeValue;
+                    txt = "Họ tên nhân viên có manv = '002': " + tennv;
+                    break;
+                }
+            }
+            document.getElementById("output").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>

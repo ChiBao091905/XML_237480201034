@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+  <contact id="1">
+    <name>Nguyễn Văn A</name>
+    <phone>0901234567</phone>
+    <email>nva@gmail.com</email>
+    <group>Công việc</group>
+  </contact>
+  <contact id="2">
+    <name>Trần Thị B</name>
+    <phone>0987654321</phone>
+    <email>ttb@gmail.com</email>
+    <group>Gia đình</group>
+  </contact>
+  <contact id="4">
+    <name>Trịnh Quốc Khánh</name>
+    <phone>051767851</phone>
+    <email>qkhanh@gmail.com</email>
+    <group>Nhân Viên IT</group>
+  </contact>
+  <contact id="5">
+    <name>Trần Văn A</name>
+    <phone>0123456789</phone>
+    <email>tranvana@gmail.com</email>
+    <group>Công Việc</group>
+  </contact>
+  <contact id="6">
+    <name>Quốc Khánh</name>
+    <phone>0125326678</phone>
+    <email>khanh@gmail.com</email>
+    <group>Công Ty</group>
+  </contact>
+</contacts>

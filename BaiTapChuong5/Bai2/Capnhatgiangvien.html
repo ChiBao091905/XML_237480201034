@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cập Nhật Giảng Viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <h2>DANH SÁCH GIẢNG VIÊN SAU KHI CẬP NHẬT</h2>
+    <div id="ketqua">Đang tải dữ liệu...</div>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var xmlDoc = xhr.responseXML;
+                var list = xmlDoc.getElementsByTagName("giangvien");
+
+                for (var i = 0; i < list.length; i++) {
+                    var hoten = list[i].getElementsByTagName("hoten")[0].textContent.trim();
+
+                    if (hoten === "Phạm Thanh Loan") {
+                        list[i].getElementsByTagName("donvi")[0].textContent = "Cơ bản";
+                    }
+                }
+
+                var table = "<table>";
+                table += "<tr><th>STT</th><th>Họ tên giảng viên</th><th>Ngành</th><th>Đơn vị</th></tr>";
+
+                for (var j = 0; j < list.length; j++) {
+                    var tenGV = list[j].getElementsByTagName("hoten")[0].textContent.trim();
+                    var nganh = list[j].getElementsByTagName("nganh")[0].textContent.trim();
+                    var donvi = list[j].getElementsByTagName("donvi")[0].textContent.trim();
+
+                    var isUpdated = (tenGV === "Phạm Thanh Loan");
+                    table += "<tr>";
+                    table += "<td>" + (j + 1) + "</td>";
+                    table += "<td>" + tenGV + "</td>";
+                    table += "<td>" + nganh + "</td>";
+                    table += "<td class='" + (isUpdated ? "highlight" : "") + "'>" + donvi + "</td>";
+                    table += "</tr>";
+                }
+                table += "</table>";
+
+                document.getElementById("ketqua").innerHTML = table;
+            }
+        };
+
+        xhr.open("GET", "hosogiangvien.xml", true);
+        xhr.send();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5: Lấy thuộc tính category của sách</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 550px; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px 12px; }
+        th { background: #28a745; color: white; }
+    </style>
+</head>
+<body>
+    <h2>Bài 5: Danh sách thuộc tính category của sách</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tên sách</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody id="output"></tbody>
+    </table>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "books.xml", true);
+        xhttp.send();
+
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            var books = xmlDoc.getElementsByTagName("book");
+            var rows = "";
+            for (var i = 0; i < books.length; i++) {
+                var title = books[i].getElementsByTagName("title")[0].textContent;
+                var cat = books[i].getAttribute("category");
+                rows += "<tr><td>" + title + "</td><td><span style='background:#e2e3e5; padding: 2px 6px; border-radius:4px;'>" + cat + "</span></td></tr>";
+            }
+            document.getElementById("output").innerHTML = rows;
+        }
+    </script>
+</body>
+</html>

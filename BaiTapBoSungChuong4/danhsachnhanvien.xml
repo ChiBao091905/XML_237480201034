@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<danhsach>
+    <nhanvien>
+        <manv>001</manv>
+        <hoten>Nguyen Van A</hoten>
+        <donvi>Hành chính</donvi>
+        <luong>10000000</luong>
+    </nhanvien>
+    <nhanvien>
+        <manv>002</manv>
+        <hoten>Tran Thi B</hoten>
+        <donvi>Kỹ thuật</donvi>
+        <luong>15000000</luong>
+    </nhanvien>
+    <nhanvien>
+        <manv>003</manv>
+        <hoten>Le Van C</hoten>
+        <donvi>Kỹ thuật</donvi>
+        <luong>12000000</luong>
+    </nhanvien>
+    <nhanvien>
+        <manv>004</manv>
+        <hoten>Pham Thi D</hoten>
+        <donvi>Kế toán</donvi>
+        <luong>11000000</luong>
+    </nhanvien>
+</danhsach>

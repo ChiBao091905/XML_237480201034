@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8: Xóa nhân viên 001</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .msg { background: #fff3cd; color: #856404; padding: 10px; border-radius: 4px; margin-bottom: 10px; }
+        table { border-collapse: collapse; width: 500px; }
+        th, td { border: 1px solid #ccc; padding: 6px 12px; }
+        th { background: #dc3545; color: white; }
+    </style>
+</head>
+<body>
+    <h2>Bài 8: Kết quả sau khi xóa nhân viên mã 001 (removeChild)</h2>
+    <div id="msg" class="msg"></div>
+    <h3>Danh sách nhân viên còn lại trong cây DOM:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Mã NV</th>
+                <th>Họ tên</th>
+                <th>Đơn vị</th>
+            </tr>
+        </thead>
+        <tbody id="output"></tbody>
+    </table>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "danhsachnhanvien.xml", true);
+        xhttp.send();
+
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            var root = xmlDoc.documentElement;
+            var manvList = xmlDoc.getElementsByTagName("manv");
+            var thongBao = "Không tìm thấy mã 001";
+
+            // Tìm và xóa
+            for (var i = 0; i < manvList.length; i++) {
+                if (manvList[i].textContent.trim() === "001") {
+                    var nhanVienCanXoa = manvList[i].parentNode;
+                    root.removeChild(nhanVienCanXoa);
+                    thongBao = "Đã xóa thành công nhân viên mã 001 khỏi cây XML DOM!";
+                    break;
+                }
+            }
+            document.getElementById("msg").innerHTML = thongBao;
+
+            // In lại bảng sau khi xóa
+            var remaining = xmlDoc.getElementsByTagName("nhanvien");
+            var rows = "";
+            for (var j = 0; j < remaining.length; j++) {
+                var manv = remaining[j].getElementsByTagName("manv")[0].textContent.trim();
+                var tenNode = remaining[j].getElementsByTagName("tennv")[0] || remaining[j].getElementsByTagName("hoten")[0];
+                var ten = tenNode ? tenNode.textContent.trim() : "";
+                var donvi = remaining[j].getElementsByTagName("donvi")[0].textContent.trim();
+
+                rows += "<tr><td>" + manv + "</td><td>" + ten + "</td><td>" + donvi + "</td></tr>";
+            }
+            document.getElementById("output").innerHTML = rows;
+        }
+    </script>
+</body>
+</html>

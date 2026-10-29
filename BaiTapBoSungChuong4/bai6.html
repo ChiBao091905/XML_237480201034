@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6: Tìm đơn vị của nhân viên 002</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .result { background: #d4edda; color: #155724; padding: 15px; border-radius: 6px; border: 1px solid #c3e6cb; width: fit-content; }
+    </style>
+</head>
+<body>
+    <h2>Bài 6: Tra cứu đơn vị qua parentNode</h2>
+    <div id="output" class="result">Đang tải...</div>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "danhsachnhanvien.xml", true);
+        xhttp.send();
+
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            var manvList = xmlDoc.getElementsByTagName("manv");
+            var txt = "Không tìm thấy nhân viên 002";
+
+            for (var i = 0; i < manvList.length; i++) {
+                if (manvList[i].textContent.trim() === "002") {
+                    // Dùng parentNode từ <manv> lên <nhanvien>
+                    var parentNode = manvList[i].parentNode;
+                    var donvi = parentNode.getElementsByTagName("donvi")[0].textContent.trim();
+                    var tenNode = parentNode.getElementsByTagName("tennv")[0] || parentNode.getElementsByTagName("hoten")[0];
+                    var tennv = tenNode ? tenNode.textContent.trim() : "";
+
+                    txt = "&bull; Mã NV: <b>002</b><br>" +
+                          "&bull; Họ tên: <b>" + tennv + "</b><br>" +
+                          "&bull; Đơn vị (truy xuất từ parentNode): <b style='color:#007bff;'>" + donvi + "</b>";
+                    break;
+                }
+            }
+            document.getElementById("output").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>
