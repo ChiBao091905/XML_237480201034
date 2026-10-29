@@ -153,7 +153,7 @@ if (isset($_GET['api'])) {
         <div class="btn-group-actions">
             <input type="file" id="xml-file-input" accept=".xml" style="display: none;" onchange="handleFileUpload(event)">
             <button type="button" class="btn-import-xml" onclick="document.getElementById('xml-file-input').click()">📤 Nhập từ XML</button>
-            <button type="button" class="btn-save-xml" onclick="exportToXML()">💾 Ghi vào XML</button>
+            <button type="button" class="btn-save-xml" onclick="exportToXML()">💾 Ghi dữ liệu tạm thời vào CSDL</button>
             <button type="button" class="btn-download" onclick="downloadXML()">📥 Tải XML</button>
         </div>
     </div>
