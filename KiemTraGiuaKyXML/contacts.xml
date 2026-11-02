@@ -12,17 +12,11 @@
     <email>ttb@gmail.com</email>
     <group>Gia đình</group>
   </contact>
-  <contact id="4">
+  <contact id="3">
     <name>Trịnh Quốc Khánh</name>
     <phone>051767851</phone>
     <email>qkhanh@gmail.com</email>
     <group>Nhân Viên IT</group>
-  </contact>
-  <contact id="5">
-    <name>Trần Văn A</name>
-    <phone>0123456789</phone>
-    <email>tranvana@gmail.com</email>
-    <group>Công Việc</group>
   </contact>
   </contact>
 </contacts>
